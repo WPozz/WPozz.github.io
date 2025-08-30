@@ -3,111 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will Write Protocol | Portfolio</title>
-    <meta name="description" content="Portfolio of Will Write Protocol – showcasing projects, skills, and professional experience.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Name - Professional Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
-        header {
-            background: #1e1e1e;
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
+        /* Custom scrollbar styling for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        header h1 {
-            margin-bottom: 0.5rem;
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb; /* Light gray track */
         }
-        header p {
-            max-width: 600px;
-            margin: auto;
-            font-size: 1.1rem;
+        ::-webkit-scrollbar-thumb {
+            background: #a8a29e; /* A soft stone gray thumb */
+            border-radius: 4px;
         }
-        section {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: #fff;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        li h3 {
-            margin-top: 0;
-        }
-        a {
-            color: #0078d4;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background: #1e1e1e;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+        .scroll-smooth-js {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800 scroll-smooth-js">
 
-    <header>
-        <h1>Hello, I'm Will Write Protocol!</h1>
-        <p>I am a <strong>Biomedical Engineer</strong> with a passion for <strong>coding</strong> and <strong>problem-solving</strong>. This is my digital space to showcase my work, projects, and adventures.</p>
+    <!-- Header & Navigation -->
+    <header class="bg-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-stone-700 rounded-lg p-2 transition duration-300 hover:text-gray-900">Your Name</a>
+            <div class="flex space-x-4 sm:space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition duration-300 py-2 px-4 rounded-lg">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-gray-900 transition duration-300 py-2 px-4 rounded-lg">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-900 transition duration-300 py-2 px-4 rounded-lg">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition duration-300 py-2 px-4 rounded-lg">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p> I'm a Bioengineer currently studying for my Master's Degree in Padova. With some knwoledge in <strong>Python, HTML5, R</strong>, I aim to build responsive, user-friendly applications that solve real-world problems. I enjoy working on <strong> new ideas and experimenting concepts </strong>. My goal is to <strong>develop impactful software skills </strong> and contribute to open-source projects that make technology more accessible.</p>
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex items-center justify-center p-4">
+        <div class="text-center">
+            <img src="https://placehold.co/150x150/f3f4f6/57534e?text=Your+Photo" alt="Your Photo" class="w-36 h-36 rounded-full mx-auto mb-6 shadow-xl border-4 border-gray-300">
+            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-gray-900 mb-4">
+                Hello, I'm <span class="text-stone-700">Your Name</span>.
+            </h1>
+            <p class="text-lg sm:text-2xl text-gray-600 font-light max-w-2xl mx-auto mb-8">
+                A passionate [Your Profession] specializing in building innovative and user-centric solutions.
+            </p>
+            <a href="#projects" class="bg-stone-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-stone-800 transition duration-300 transform hover:scale-105">View My Work</a>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <ul>
-            <li>
-                <h3> Machine Learning </h3>
-                <p> Machine learning has always been one of my passions so it's natural for me to start a small project. </p>
-                <a href="https://github.com/yourusername/weathernow" target="_blank">View on GitHub</a>
-            </li>
-            <li>
-                <h3> Signal Processing </h3>
-                <p> Signal processing project. </p>
-                <a href="https://github.com/yourusername/data-entry-automation" target="_blank">View on GitHub</a>
-            </li>
-        </ul>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900">About Me</h2>
+            <div class="h-1 w-20 bg-stone-700 mx-auto mb-12 rounded-full"></div>
+            <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                Welcome to my digital space! I am a highly motivated and creative [Your Profession] with a strong foundation in [Your Key Skill 1] and [Your Key Skill 2]. With a keen eye for detail and a passion for crafting elegant and efficient solutions, I thrive on turning complex problems into intuitive user experiences.
+            </p>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                My journey in the world of [Your Field] began [Number] years ago, and since then, I've had the privilege of working on diverse projects, from [Project Type A] to [Project Type B]. I am a lifelong learner, always eager to explore new technologies and methodologies to deliver exceptional results.
+            </p>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <p> If you want to collaborate, chat about a project, or just say hi, you can reach me on any of the platforms below. Always happy to connect and hear meaningful ideas. </p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a></li>
-            <li><a href="https://twitter.com/yourtwitter" target="_blank">Twitter</a></li>
-            <li><a href="mailto:youremail@example.com">Email Me</a></li>
-        </ul>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900">My Skills</h2>
+            <div class="h-1 w-20 bg-stone-700 mx-auto mb-12 rounded-full"></div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="text-6xl mb-4 text-stone-700">
+                        &#x1F4BB; <!-- Placeholder for an icon (e.g., laptop) -->
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Frontend Development</h3>
+                    <p class="text-gray-500">HTML, CSS, JavaScript, React, Vue, Tailwind CSS</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="text-6xl mb-4 text-stone-700">
+                        &#x1F528; <!-- Placeholder for an icon (e.g., wrench) -->
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Backend Development</h3>
+                    <p class="text-gray-500">Node.js, Python, Express, REST APIs</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="text-6xl mb-4 text-stone-700">
+                        &#x1F4BE; <!-- Placeholder for an icon (e.g., database) -->
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Databases</h3>
+                    <p class="text-gray-500">MongoDB, PostgreSQL, Firestore</p>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="text-6xl mb-4 text-stone-700">
+                        &#x1F4AF; <!-- Placeholder for an icon (e.g., check mark) -->
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">DevOps & Tools</h3>
+                    <p class="text-gray-500">Git, Docker, CI/CD, AWS</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Will Write Protocol. All rights reserved.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900">My Projects</h2>
+            <div class="h-1 w-20 bg-stone-700 mx-auto mb-12 rounded-full"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-100 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/e5e7eb/57534e?text=Project+One" alt="Project One" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Project Title One</h3>
+                        <p class="text-gray-500 mb-4">A brief description of your project. Mention the key technologies used and the problem it solves.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-gray-100 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/e5e7eb/57534e?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Project Title Two</h3>
+                        <p class="text-gray-500 mb-4">A brief description of your project. Mention the key technologies used and the problem it solves.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-100 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/e5e7eb/57534e?text=Project+Three" alt="Project Three" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Project Title Three</h3>
+                        <p class="text-gray-500 mb-4">A brief description of your project. Mention the key technologies used and the problem it solves.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="container mx-auto max-w-xl text-center">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900">Get In Touch</h2>
+            <div class="h-1 w-20 bg-stone-700 mx-auto mb-12 rounded-full"></div>
+            <p class="text-gray-600 leading-relaxed text-lg mb-8">
+                I am always excited to connect with new people and discuss potential opportunities. Feel free to reach out!
+            </p>
+            <a href="mailto:your.email@example.com" class="bg-stone-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-stone-800 transition duration-300 transform hover:scale-105">
+                Send me an Email
+            </a>
+            <div class="mt-8 flex justify-center space-x-6">
+                <!-- Social media links -->
+                <a href="#" class="text-gray-500 hover:text-stone-700 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <!-- Placeholder for LinkedIn icon -->
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.764 1.75-1.764c.967 0 1.75.788 1.75 1.764s-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-stone-700 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <!-- Placeholder for GitHub icon -->
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 text-center text-gray-500">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
