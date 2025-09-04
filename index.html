@@ -292,48 +292,58 @@
     </div>
 
     <script>
-        // Global theme management functions
-        function setTheme(theme) {
-            if (theme === 'dark') {
+        // Initialize theme immediately to prevent flashing
+        (function() {
+            const storedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
                 document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
             } else {
                 document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
             }
-            updateThemeIcons();
-        }
+        })();
 
+        // Theme management functions
         function updateThemeIcons() {
             const isDark = document.documentElement.classList.contains('dark');
             const moonIcon = document.getElementById('theme-icon-moon');
             const sunIcon = document.getElementById('theme-icon-sun');
             
             if (moonIcon && sunIcon) {
-                moonIcon.style.display = isDark ? 'none' : 'block';
-                sunIcon.style.display = isDark ? 'block' : 'none';
+                if (isDark) {
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'block';
+                } else {
+                    moonIcon.style.display = 'block';
+                    sunIcon.style.display = 'none';
+                }
             }
         }
 
-        // Initialize theme on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set initial theme based on localStorage or system preference
-            const storedTheme = localStorage.theme;
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
             
-            if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
-                setTheme('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
             } else {
-                setTheme('light');
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
             }
+            
+            updateThemeIcons();
+        }
+
+        // Initialize everything after DOM loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update theme icons on initial load
+            updateThemeIcons();
 
             // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle');
             if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    const isDark = document.documentElement.classList.contains('dark');
-                    setTheme(isDark ? 'light' : 'dark');
-                });
+                themeToggle.addEventListener('click', toggleTheme);
             }
             
             // Timeline Accordion functionality
