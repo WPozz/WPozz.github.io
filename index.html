@@ -12,9 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Set smooth scrolling behavior and top padding for the fixed header offset */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Corresponds to h-20 on header */
+        }
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
         }
         /* Custom scrollbar styling for a cleaner look */
         ::-webkit-scrollbar {
@@ -27,22 +31,16 @@
             background: #a8a29e; /* A soft stone gray thumb */
             border-radius: 4px;
         }
-        .scroll-smooth-js {
-            scroll-behavior: smooth;
-        }
-
         /* Styles for the project card */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            background-color: #f3f4f6;
+        .project-card-bg {
+             background-color: #f3f4f6;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 scroll-smooth-js">
+<body class="bg-gray-100 text-gray-800">
 
     <!-- Header & Navigation -->
-    <header class="bg-white p-4 sticky top-0 z-50 shadow-lg">
+    <header class="bg-white px-4 sticky top-0 z-50 shadow-lg flex items-center h-20">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#hero" class="text-2xl font-bold text-stone-700 rounded-lg p-2 transition duration-300 hover:text-gray-900">WP</a>
             <div class="flex space-x-4 sm:space-x-8">
@@ -123,6 +121,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 bg-white">
         <div class="container mx-auto max-w-6xl text-center">
@@ -130,23 +129,40 @@
             <div class="h-1 w-20 bg-stone-700 mx-auto mb-12 rounded-full"></div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div id="project-card-1" class="project-card rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-    <div class="p-6">
-        <h3 class="text-2xl font-bold mb-2 text-gray-900">Finite Element Analysis and Modeling of a Lumbar Vertebra</h3>
-        <img src="https://www.researchgate.net/publication/348843093/figure/fig2/AS:11431281239318106@1714303193183/Segmented-and-labeled-vertebrae-and-division-in-semantic-parts-A-DenseVNet-output-L3.tif" alt="A 3D model of a lumbar vertebra from a medical scan" class="w-full h-48 object-contain my-4 rounded-lg shadow-md">
-        <p class="text-gray-500 mb-4 text-left">Starting from a diagnostic image of the L3 lumbar vertebra, obtained via CT, a segmentation was performed using the multi-platform ITK-Snap software. The geometry was subsequently manipulated and modeled using the COMSOL Multiphysics analysis software. A comparison between healthy and pathological case showed that it was indeed possible to model a vertebra and simulate osteoporotic conditions to assess potential fracture risks.</p>
-        <div class="flex justify-between items-center">
-            <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
-            <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
-        </div>
-    </div>
-</div>
-                <!-- Project Card 2 -->
-                <div id="project-card-2" class="project-card rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <!-- Project Card 1 -->
+                <div class="project-card-bg rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900"> Machine Learning classification algorithm for diabetes disease</h3>
-                        <img src="https://www.aiplusinfo.com/wp-content/uploads/2023/01/Screen-Shot-2023-01-26-at-6.09.34-PM.jpg" alt="EEG electrodes attached to a person's head, showing brain waves on a monitor" class="w-full h-48 object-cover my-4 rounded-lg shadow-md">
-                        <p class="text-gray-500 mb-4 text-left">Developed a machine learning pipeline to classify diabetes disease in Python. The project involved data preprocessing, training and tuning an SVM (Support vector machine) model to achieve a high accuracy rate in disease classification.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Finite Element Analysis and Modeling of a Lumbar Vertebra</h3>
+                        <div class="relative group">
+                            <img src="https://www.researchgate.net/publication/348843093/figure/fig2/AS:11431281239318106@1714303193183/Segmented-and-labeled-vertebrae-and-division-in-semantic-parts-A-DenseVNet-output-L3.tif" alt="A 3D model of a lumbar vertebra from a medical scan" class="project-image w-full h-48 object-contain rounded-lg shadow-md cursor-pointer">
+                            <div class="absolute inset-0 bg-stone-900 bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none">
+                                <div class="text-center text-white p-4">
+                                    <h4 class="font-bold text-lg">Technologies Used</h4>
+                                    <p class="text-sm">ITK-Snap, COMSOL Multiphysics</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 my-4 text-left">Starting from a diagnostic image of the L3 lumbar vertebra, obtained via CT, a segmentation was performed... A comparison between healthy and pathological case showed that it was indeed possible to model a vertebra and simulate osteoporotic conditions to assess potential fracture risks.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card-bg rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Machine Learning classification algorithm for diabetes disease</h3>
+                         <div class="relative group">
+                            <img src="https://www.aiplusinfo.com/wp-content/uploads/2023/01/Screen-Shot-2023-01-26-at-6.09.34-PM.jpg" alt="A diagram showing a support vector machine model" class="project-image w-full h-48 object-cover rounded-lg shadow-md cursor-pointer">
+                            <div class="absolute inset-0 bg-stone-900 bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none">
+                                <div class="text-center text-white p-4">
+                                    <h4 class="font-bold text-lg">Technologies Used</h4>
+                                    <p class="text-sm">Python, Scikit-learn, Pandas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 my-4 text-left">Developed a machine learning pipeline to classify diabetes disease in Python. The project involved data preprocessing, training and tuning an SVM (Support vector machine) model to achieve a high accuracy rate in disease classification.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
                             <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
@@ -154,11 +170,19 @@
                     </div>
                 </div>
                 <!-- Project Card 3 -->
-                <div id="project-card-3" class="project-card rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="project-card-bg rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Biomedical Image Analysis: A Tumor Segmentation Tool</h3>
-                      <img src="https://medizinonline.com/wp-content/uploads/2014/09/tumor.jpg" alt="A 3D model of a lumbar vertebra from a medical scan" class="w-full h-48 object-contain my-4 rounded-lg shadow-md">
-                        <p class="text-gray-500 mb-4 text-left">This project involves developing a software tool to automate the process of tumor segmentation and quantification from medical scans. Using advanced computer vision and image processing algorithms, the application will precisely identify and outline tumors in MRI or CT images.  The software will then calculate key metrics like tumor volume and growth rate, providing clinicians with a powerful, data-driven tool for diagnosis and treatment planning. </p>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Biomedical Image Analysis: A Tumor Segmentation Tool</h3>
+                         <div class="relative group">
+                            <img src="https://medizinonline.com/wp-content/uploads/2014/09/tumor.jpg" alt="A medical scan showing tumor segmentation" class="project-image w-full h-48 object-contain rounded-lg shadow-md cursor-pointer">
+                            <div class="absolute inset-0 bg-stone-900 bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none">
+                                <div class="text-center text-white p-4">
+                                    <h4 class="font-bold text-lg">Technologies Used</h4>
+                                    <p class="text-sm">Python, TensorFlow, OpenCV</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 my-4 text-left">This project involves developing a software tool to automate the process of tumor segmentation and quantification from medical scans. The software will calculate key metrics like tumor volume and growth rate, providing clinicians with a powerful, data-driven tool for diagnosis and treatment planning.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-stone-700 font-semibold hover:underline">View Live</a>
                             <a href="#" class="text-gray-500 hover:text-gray-900">GitHub Repo</a>
@@ -202,5 +226,60 @@
             <p>&copy; 2024 WWP. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" id="back-to-top" class="fixed bottom-8 right-8 bg-stone-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-stone-800 transition-opacity duration-300 z-40 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-[100] flex justify-center items-center p-4 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-8 text-white text-5xl font-light hover:text-gray-300">&times;</button>
+        <img id="lightbox-image" src="" alt="Enlarged project image" class="max-w-full max-h-full rounded-lg shadow-2xl">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Lightbox Functionality ---
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                const lightboxImage = document.getElementById('lightbox-image');
+                const lightboxClose = document.getElementById('lightbox-close');
+                const projectImages = document.querySelectorAll('.project-image');
+
+                projectImages.forEach(img => {
+                    img.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevents click from bubbling up to parent elements
+                        lightbox.classList.remove('hidden');
+                        lightboxImage.src = img.src;
+                    });
+                });
+
+                const closeLightbox = () => {
+                    lightbox.classList.add('hidden');
+                };
+
+                lightboxClose.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', (e) => {
+                    // Close if the click is on the background, not the image itself
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+            }
+
+            // --- Back to Top Button Functionality ---
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) { // Show button after scrolling 300px
+                        backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                    } else {
+                        backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
