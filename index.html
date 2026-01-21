@@ -317,16 +317,34 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Inline Script Loaded Successfully");
+    console.log("✅ Portfolio Script Initialized");
 
-    // --- 1. TIMELINE LOGIC ---
+    // --- 1. ROBUST TIMELINE LOGIC ---
     const triggers = document.querySelectorAll('.timeline-trigger');
+    
+    console.log(`🔍 Found ${triggers.length} timeline triggers.`);
+
     triggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const details = this.nextElementSibling;
-            const icon = this.querySelector('i');
-            if (details) details.classList.toggle('hidden');
-            if (icon) icon.classList.toggle('rotate-180');
+        trigger.addEventListener('click', (e) => {
+            console.log("🖱️ Timeline Clicked!");
+            
+            // Safer selector: Go up to the parent, then find the details inside it
+            // This works even if you change the HTML structure slightly
+            const parent = trigger.parentElement;
+            const details = parent.querySelector('.timeline-details');
+            const icon = trigger.querySelector('i');
+
+            if (details) {
+                // Toggle the 'hidden' class
+                details.classList.toggle('hidden');
+                console.log("   -> Toggled visibility");
+            } else {
+                console.error("   ❌ Error: Could not find .timeline-details sibling!");
+            }
+
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
         });
     });
 
@@ -366,9 +384,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. THEME TOGGLE ---
     const toggleBtn = document.getElementById('theme-toggle');
     const html = document.documentElement;
+    
+    // Set initial state
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         html.classList.add('dark');
     }
+    
     if(toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             html.classList.toggle('dark');
@@ -423,8 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
     }
 
-    // --- 5. SCROLL OBSERVER (Fade in elements) ---
-    // This is the missing part that makes sections visible!
+    // --- 5. SCROLL OBSERVER (Required for content to be visible) ---
     const fadeElems = document.querySelectorAll('.fade-in-up');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -433,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     fadeElems.forEach(el => observer.observe(el));
 
-    // --- 6. SCROLL HEADER & BACK TO TOP ---
+    // --- 6. HEADER & BACK TO TOP ---
     const header = document.getElementById('header');
     const backToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
@@ -445,9 +465,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if(backToTop) {
             if(window.scrollY > 300) {
-                backToTop.classList.remove('translate-y-20', 'opacity-0');
+                backToTop.classList.remove('opacity-0', 'pointer-events-none'); // FIX: Removed translate-y logic for simpler visibility
+                backToTop.classList.remove('translate-y-20');
             } else {
-                backToTop.classList.add('translate-y-20', 'opacity-0');
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('translate-y-20');
             }
         }
     });
@@ -455,3 +477,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
