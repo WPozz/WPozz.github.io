@@ -27,5 +27,5 @@
         }
     </style>
 </head>
-</head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
+
