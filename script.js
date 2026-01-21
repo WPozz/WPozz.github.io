@@ -1,11 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Portfolio Script Loaded"); // Debug check
+
+    // --- TIMELINE ACCORDION LOGIC ---
+    const triggers = document.querySelectorAll('.timeline-trigger');
     
+    if (triggers.length === 0) {
+        console.error("No timeline triggers found! Check HTML class names.");
+    }
+
+    triggers.forEach(btn => {
+        btn.addEventListener('click', function() {
+            console.log("Timeline clicked"); // Debug check
+            
+            // 1. Get the details div (next sibling)
+            const details = this.nextElementSibling;
+            
+            // 2. Get the icon inside the button
+            const icon = this.querySelector('i');
+
+            // 3. Toggle visibility
+            if (details) {
+                details.classList.toggle('hidden');
+            } else {
+                console.error("No details div found after button");
+            }
+            
+            // 4. Rotate icon
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+
     // --- TYPEWRITER EFFECT ---
     const typeText = document.getElementById('typewriter');
     if(typeText) {
         const phrases = ["Biomedical Engineer", "Signal Processing Specialist", "Machine Learning Enthusiast"];
-        let phraseIdx = 0;
-        let charIdx = 0;
+        let phraseIdx = 0; 
+        let charIdx = 0; 
         let isDeleting = false;
         
         function type() {
@@ -37,61 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle');
     const html = document.documentElement;
     
-    // Check local storage or system preference
+    // Check preference
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         html.classList.add('dark');
     } else {
         html.classList.remove('dark');
     }
 
-    toggleBtn.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    });
-
-    // --- SCROLL EFFECTS ---
-    const header = document.getElementById('header');
-    const backToTop = document.getElementById('back-to-top');
-    const fadeElems = document.querySelectorAll('.fade-in-up');
-
-    window.addEventListener('scroll', () => {
-        // Header Shadow
-        if(window.scrollY > 50) header.classList.add('shadow-md');
-        else header.classList.remove('shadow-md');
-
-        // Back to Top
-        if(window.scrollY > 300) {
-            backToTop.classList.remove('translate-y-20', 'opacity-0');
-        } else {
-            backToTop.classList.add('translate-y-20', 'opacity-0');
-        }
-    });
-
-    // Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) entry.target.classList.add('visible');
+    if(toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
-    }, { threshold: 0.1 });
-    fadeElems.forEach(el => observer.observe(el));
+    }
 
-    // --- TIMELINE ACCORDION ---
-    document.querySelectorAll('.timeline-trigger').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const details = btn.nextElementSibling;
-            const icon = btn.querySelector('.fa-chevron-down');
-            details.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        });
-    });
-
-    // --- MODAL LOGIC ---
+    // --- MODAL LOGIC (PROJECTS) ---
     const modal = document.getElementById('project-modal');
     if(modal) {
         const modalContent = document.getElementById('modal-content');
         const modalBackdrop = document.getElementById('modal-backdrop');
         const closeBtn = document.getElementById('modal-close');
 
+        // Make openModal available globally
         window.openModal = function(data) {
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-image').src = data.image;
@@ -101,12 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const tagsContainer = document.getElementById('modal-tags');
             tagsContainer.innerHTML = '';
-            data.tags.split(',').forEach(tag => {
-                const span = document.createElement('span');
-                span.className = 'bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded dark:bg-teal-900 dark:text-teal-200';
-                span.innerText = tag.trim();
-                tagsContainer.appendChild(span);
-            });
+            if(data.tags) {
+                data.tags.split(',').forEach(tag => {
+                    const span = document.createElement('span');
+                    span.className = 'bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded dark:bg-teal-900 dark:text-teal-200';
+                    span.innerText = tag.trim();
+                    tagsContainer.appendChild(span);
+                });
+            }
 
             modal.classList.remove('hidden');
             setTimeout(() => {
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', (e) => window.openModal(e.target.dataset));
         });
 
-        closeBtn.addEventListener('click', closeModal);
-        modalBackdrop.addEventListener('click', closeModal);
+        if(closeBtn) closeBtn.addEventListener('click', closeModal);
+        if(modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
     }
 });
