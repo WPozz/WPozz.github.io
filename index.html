@@ -70,9 +70,11 @@
                     <span id="typewriter" class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 font-light border-r-2 border-teal-500 pr-1 animate-pulse"></span>
                 </div>
 
-                <div class="flex justify-center gap-4">
+                <div class="flex justify-center gap-4 flex-wrap">
                     <a href="#projects" class="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 hover:scale-105 transition transform">View Work</a>
-                    <a href="#contact" class="bg-white dark:bg-slate-800 text-teal-600 dark:text-teal-400 border border-teal-600 dark:border-teal-400 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition transform">Contact</a>
+                    <a href="./William_Pozzolini_CV.pdf" target="_blank" class="bg-slate-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-slate-700 hover:scale-105 transition transform border border-slate-700">
+                        <i class="fa-solid fa-file-pdf mr-2"></i>Download CV
+                    </a>
                 </div>
             </div>
         </section>
@@ -165,13 +167,13 @@
                             <div class="flex justify-between items-center">
                                 <div>
                                     <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Future</span>
-                                    <h3 class="text-lg font-bold">Open to Opportunities</h3>
+                                    <h3 class="text-lg font-bold">Seeking R&D Roles in MedTech & AI</h3>
                                     <p class="text-slate-500 text-sm">Worldwide</p>
                                 </div>
                                 <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
                             </div>
                             <div class="timeline-details hidden mt-3 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-200 dark:border-slate-700 pt-3">
-                                <p>Looking for internships or full-time roles in MedTech, Data Science, or R&D. Ready to apply academic rigor to real-world healthcare challenges.</p>
+                                <p>Available immediately for roles in Biomedical Signal Processing, Computer Vision, or Data Science. Ready to translate academic research into clinical solutions.</p>
                             </div>
                         </div>
                     </div>
@@ -313,7 +315,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-   <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Inline Script Loaded Successfully");
 
@@ -420,10 +422,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if(closeBtn) closeBtn.addEventListener('click', closeModal);
         if(modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
     }
+
+    // --- 5. SCROLL OBSERVER (Fade in elements) ---
+    // This is the missing part that makes sections visible!
+    const fadeElems = document.querySelectorAll('.fade-in-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    fadeElems.forEach(el => observer.observe(el));
+
+    // --- 6. SCROLL HEADER & BACK TO TOP ---
+    const header = document.getElementById('header');
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) {
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('shadow-md');
+        }
+        
+        if(backToTop) {
+            if(window.scrollY > 300) {
+                backToTop.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTop.classList.add('translate-y-20', 'opacity-0');
+            }
+        }
+    });
 });
 </script>
 </body>
 </html>
-</body>
-</html>
-
