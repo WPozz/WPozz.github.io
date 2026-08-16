@@ -1,179 +1,241 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="it" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WPozz - Bioengineering Portfolio</title>
+    <title>William Pozzolini | Bioengineering & Deep Learning Researcher</title>
+    <meta name="description" content="Portfolio accademico e professionale di William Pozzolini, ricercatore in Bioingegneria e Deep Learning applicato alle neuroscienze e neuroimaging.">
+    <meta name="author" content="William Pozzolini">
     
-    <meta name="description" content="Portfolio of William Pozzolini, a Biomedical Engineer specializing in Signal Processing and ML.">
-    <meta name="keywords" content="Biomedical Engineer, Signal Processing, Machine Learning, Portfolio">
-    <meta property="og:title" content="WPozz - Professional Portfolio">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: { sans: ['Inter', 'sans-serif'] },
-            colors: {
-              teal: { 50:'#f0fdfa', 100:'#ccfbf1', 200:'#99f6e4', 300:'#5eead4', 400:'#2dd4bf', 500:'#14b8a6', 600:'#0d9488', 700:'#0f766e', 800:'#115e59', 900:'#134e4a' }
-            }
-          }
-        }
-      }
-    </script>
-
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
+<body>
 
-    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 h-20 flex items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-transparent dark:border-slate-800">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-teal-700 dark:text-teal-400">WP</a>
-            
-            <div class="flex items-center space-x-1 sm:space-x-4">
-                <div class="hidden md:flex space-x-1">
-                    <a href="#about" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">About</a>
-                    <a href="#skills" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Skills</a>
-                    <a href="#journey" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Journey</a>
-                    <a href="#projects" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Projects</a>
-                </div>
-                
-                <a href="./William_Pozzolini_CV.pdf" target="_blank" class="hidden sm:inline-block bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 font-medium py-2 px-4 rounded-full text-sm hover:bg-teal-200 dark:hover:bg-teal-800 transition">Resume</a>
-                
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
-                    <i class="fa-solid fa-moon dark:hidden"></i>
-                    <i class="fa-solid fa-sun hidden dark:inline"></i>
+    <!-- BACKGROUND GLOW EFFECTS -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <!-- NAVIGATION BAR -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-bracket">&lt;</span>WP<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-regular fa-user"></i> Chi Sono</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Esperienze</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link"><i class="fa-solid fa-code"></i> Progetti</a></li>
+                    <li class="nav-item"><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Formazione</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Competenze</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-regular fa-envelope"></i> Contatti</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema chiaro/scuro">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="William_Pozzolini_CV.pdf" class="btn btn-outline btn-sm nav-cv-btn" target="_blank">
+                    <i class="fa-solid fa-file-arrow-down"></i> CV
+                </a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu di navigazione">
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="pt-20">
-        <section id="hero" class="min-h-[calc(100vh-80px)] flex items-center justify-center p-4">
-            <div class="text-center">
-                <img src="https://placehold.co/150x150/e2e8f0/64748b?text=WP" 
-                     alt="William Pozzolini" 
-                     class="w-36 h-36 rounded-full mx-auto mb-6 shadow-xl border-4 border-white dark:border-slate-800 object-cover">
-                
-                <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-4">
-                    Hello, I'm <span class="text-teal-600 dark:text-teal-400">WPozz</span>.
-                </h1>
-                
-                <div class="h-8 mb-8 flex justify-center items-center">
-                    <span id="typewriter" class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 font-light border-r-2 border-teal-500 pr-1 animate-pulse"></span>
+    <main class="main">
+
+        <!-- HERO SECTION -->
+        <section class="hero section" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Deep Learning Researcher & Bioengineer
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Ciao, sono <span class="gradient-text">William Pozzolini</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Sviluppo soluzioni all'avanguardia all'intersezione tra <strong class="text-highlight">Intelligenza Artificiale</strong>, <strong class="text-highlight">Neuroimaging 3D</strong> e <strong class="text-highlight">Bioingegneria</strong>. Attualmente impegnato nella ricerca su Self-Supervised Learning e Brain-Computer Interfaces.
+                    </p>
+
+                    <div class="hero-tags">
+                        <span class="tag"><i class="fa-solid fa-brain"></i> Neuroimaging & SSL</span>
+                        <span class="tag"><i class="fa-brands fa-python"></i> PyTorch & HPC</span>
+                        <span class="tag"><i class="fa-solid fa-location-dot"></i> Padova / Pescara, IT</span>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fa-solid fa-diagram-project"></i> Esplora Progetti
+                        </a>
+                        <a href="William_Pozzolini_CV.pdf" class="btn btn-secondary" target="_blank">
+                            <i class="fa-solid fa-download"></i> Scarica CV (PDF)
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">
+                            Contattami <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://linkedin.com/in/william-pozzolini" target="_blank" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/WPozz" target="_blank" class="social-link" title="GitHub" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:williampoz15@gmail.com" class="social-link" title="Email" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="flex justify-center gap-4 flex-wrap">
-                    <a href="#projects" class="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 hover:scale-105 transition transform">View Work</a>
-                    <a href="./William_Pozzolini_CV.pdf" target="_blank" class="bg-slate-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-slate-700 hover:scale-105 transition transform border border-slate-700">
-                        <i class="fa-solid fa-file-pdf mr-2"></i>Download CV
-                    </a>
+                <div class="hero-visual">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">william@unipd-pnc:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat</span> researcher_profile.json</p>
+                            <pre class="t-output"><code>{
+  <span class="t-key">"name"</span>: <span class="t-str">"William Pozzolini"</span>,
+  <span class="t-key">"role"</span>: <span class="t-str">"Deep Learning Researcher"</span>,
+  <span class="t-key">"lab"</span>: <span class="t-str">"Padova Neuroscience Center (PNC)"</span>,
+  <span class="t-key">"project"</span>: <span class="t-str">"EU HEREDITARY Project"</span>,
+  <span class="t-key">"focus"</span>: [
+    <span class="t-str">"Self-Supervised Learning (C-JEPA, VICReg)"</span>,
+    <span class="t-str">"3D MRI Neuroimaging & Defacing"</span>,
+    <span class="t-str">"Multi-Modal CNN-Transformers"</span>,
+    <span class="t-str">"BCI & Biosignal Processing"</span>
+  ],
+  <span class="t-key">"status"</span>: <span class="t-green">"Available for Research & AI Roles"</span>
+}</code></pre>
+                            <p class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">python3</span> -c <span class="t-str">"import torch; print(f'CUDA Devices: {torch.cuda.device_count()}')"</span></p>
+                            <p class="t-line t-res"><span class="t-cyan">CUDA Devices: 4 (Multi-GPU SLURM Node Ready)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Metrics Counter -->
+                    <div class="hero-stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">318k+</span>
+                            <span class="stat-label">MRI Scans Dataset</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">91%</span>
+                            <span class="stat-label">Top-3 Acc. Med-NLP</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Lingue Parlate</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 px-4 bg-white dark:bg-slate-800">
-            <div class="container mx-auto max-w-4xl text-center fade-in-up">
-                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-slate-100">About Me</h2>
-                <div class="h-1 w-20 bg-teal-500 mx-auto mb-8 rounded-full"></div>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mb-4">
-                    Hi! I'm William Pozzolini. I am a Bio-Engineer blending the worlds of biology and technology. With a strong foundation in Signal Processing and Machine Learning, I aim to bridge the gap between complex medical data and actionable clinical insights.
-                </p>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
-                    My journey started in Italy and has expanded through research at the University of Pescara and the University of Padova. I thrive on solving "unsolvable" problems using code, mathematics, and creativity.
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20 px-4">
-            <div class="container mx-auto max-w-6xl text-center fade-in-up">
-                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-slate-100">Technical Skills</h2>
-                <div class="h-1 w-20 bg-teal-500 mx-auto mb-12 rounded-full"></div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
-                        <div class="text-5xl mb-4 text-teal-500 group-hover:text-teal-600 transition"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h3 class="font-semibold text-lg mb-2">Software</h3>
-                        <p class="text-sm text-slate-500">Matlab, COMSOL, ITK-Snap, Simulink</p>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
-                        <div class="text-5xl mb-4 text-teal-500 group-hover:text-teal-600 transition"><i class="fa-brands fa-python"></i></div>
-                        <h3 class="font-semibold text-lg mb-2">Development</h3>
-                        <p class="text-sm text-slate-500">Python (PyTorch, Pandas), C++, HTML/CSS, R</p>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
-                        <div class="text-5xl mb-4 text-teal-500 group-hover:text-teal-600 transition"><i class="fa-solid fa-brain"></i></div>
-                        <h3 class="font-semibold text-lg mb-2">Core Focus</h3>
-                        <p class="text-sm text-slate-500">Deep Learning, Biosignal Processing, Neurorobotics</p>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
-                        <div class="text-5xl mb-4 text-teal-500 group-hover:text-teal-600 transition"><i class="fa-solid fa-file-shield"></i></div>
-                        <h3 class="font-semibold text-lg mb-2">Regulations</h3>
-                        <p class="text-sm text-slate-500">ISO 10993, ISO 13485, ISO 14971</p>
-                    </div>
+        <!-- ABOUT SECTION -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Profilo & Visione</span>
+                    <h2 class="section-title">Chi Sono</h2>
+                    <div class="section-divider"></div>
                 </div>
-            </div>
-        </section>
 
-        <section id="journey" class="py-20 px-4 bg-white dark:bg-slate-800">
-            <div class="container mx-auto max-w-3xl fade-in-up">
-                <h2 class="text-3xl font-bold text-center mb-4 text-slate-900 dark:text-slate-100">My Journey</h2>
-                <div class="h-1 w-20 bg-teal-500 mx-auto mb-16 rounded-full"></div>
-                
-                <div class="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700 ml-4">
-                    <div class="mb-10 relative">
-                        <div class="absolute -left-[41px] bg-teal-500 h-5 w-5 rounded-full border-4 border-white dark:border-slate-800"></div>
-                        <div class="cursor-pointer timeline-trigger p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-md transition">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">2021 - 2024</span>
-                                    <h3 class="text-lg font-bold">Bachelor's in Biomedical Engineering</h3>
-                                    <p class="text-slate-500 text-sm">University of Pescara</p>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3 class="about-lead">Ingegneria Biomedica incontra il Deep Learning per la salute del futuro.</h3>
+                        <p>
+                            Sono uno studente magistrale in <strong>Bioingegneria</strong> presso l'<strong>Università degli Studi di Padova</strong> e Ricercatore in Deep Learning presso il <strong>Padova Neuroscience Center (PNC)</strong>, sotto la supervisione del Prof. Manfredo Atzori.
+                        </p>
+                        <p>
+                            La mia attività di ricerca si focalizza sull'applicazione di architetture avanzate di <strong>Self-Supervised Learning (SSL)</strong> a dataset clinici di neuroimaging 3D eterogenei (EU HEREDITARY Project), sviluppando modelli <strong>CNN-Transformer</strong> per l'estrazione di fenotipi latenti senza supervisione esplicita.
+                        </p>
+                        <p>
+                            Con una solida base accademica conseguita con lode/101 in Ingegneria Biomedica all'Università "G. d'Annunzio" di Chieti-Pescara (modellazione biomeccanica e FEA), combino competenze computazionali ad alte prestazioni (HPC, SLURM, PyTorch), analisi di biosegnali e sensibilità clinica.
+                        </p>
+
+                        <!-- International & Languages Highlight -->
+                        <div class="language-box">
+                            <h4><i class="fa-solid fa-earth-europe"></i> Profilo Internazionale & Competenze Linguistiche</h4>
+                            <p class="lang-sub">Anno accademico svolto presso la <em>Scuola Europea di Bruxelles I (Uccle, Belgio)</em>.</p>
+                            <div class="lang-chips">
+                                <div class="lang-chip">
+                                    <span class="lang-name">Italiano</span>
+                                    <span class="lang-level native">Madrelingua</span>
                                 </div>
-                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                            </div>
-                            <div class="timeline-details hidden mt-3 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-200 dark:border-slate-700 pt-3">
-                                <p>Focused on foundational principles of engineering applied to biology. Key coursework: Biomechanics, Medical Instrumentation, and Biomaterials.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-10 relative">
-                        <div class="absolute -left-[41px] bg-teal-500 h-5 w-5 rounded-full border-4 border-white dark:border-slate-800"></div>
-                        <div class="cursor-pointer timeline-trigger p-4 bg-slate-50 dark:bg-slate-900 rounded-lg shadow-md transition border border-teal-100 dark:border-teal-900">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">2024 - Present</span>
-                                    <h3 class="text-lg font-bold">Master's in Bioengineering</h3>
-                                    <p class="text-slate-500 text-sm">University of Padova</p>
+                                <div class="lang-chip">
+                                    <span class="lang-name">Inglese</span>
+                                    <span class="lang-level c1">C1 (Avanzato)</span>
                                 </div>
-                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform rotate-180"></i>
-                            </div>
-                            <div class="timeline-details mt-3 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-200 dark:border-slate-700 pt-3">
-                                <p>Specializing in Advanced Signal Processing and AI. Currently researching deep learning models for medical image analysis and real-time biological signal classification.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute -left-[41px] bg-teal-500 h-5 w-5 rounded-full border-4 border-white dark:border-slate-800"></div>
-                        <div class="cursor-pointer timeline-trigger p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-md transition">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Future</span>
-                                    <h3 class="text-lg font-bold">Seeking R&D Roles in MedTech & AI</h3>
-                                    <p class="text-slate-500 text-sm">Worldwide</p>
+                                <div class="lang-chip">
+                                    <span class="lang-name">Francese</span>
+                                    <span class="lang-level b2">B2</span>
                                 </div>
-                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                                <div class="lang-chip">
+                                    <span class="lang-name">Tedesco</span>
+                                    <span class="lang-level b1">B1</span>
+                                </div>
+                                <div class="lang-chip">
+                                    <span class="lang-name">Spagnolo</span>
+                                    <span class="lang-level b1">B1</span>
+                                </div>
                             </div>
-                            <div class="timeline-details hidden mt-3 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-200 dark:border-slate-700 pt-3">
-                                <p>Available immediately for roles in Biomedical Signal Processing, Computer Vision, or Data Science. Ready to translate academic research into clinical solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-cards-col">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-dna"></i></div>
+                            <div>
+                                <h4>Medical AI & SSL</h4>
+                                <p>Sviluppo di paradigmi C-JEPA, VICReg, e Vision Transformers per imaging volumetrico (MRI 3D, CT).</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-server"></i></div>
+                            <div>
+                                <h4>HPC & Multi-GPU Computing</h4>
+                                <p>Orchestrazione di cluster Linux ad alte prestazioni tramite SLURM e mixed-precision computing (AMP).</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-wave-square"></i></div>
+                            <div>
+                                <h4>Neuro-Robotics & BCI</h4>
+                                <p>Classificazione di segnali EEG in tempo reale su architettura ROS e biosensori indossabili.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-bone"></i></div>
+                            <div>
+                                <h4>Biomeccanica & FEA</h4>
+                                <p>Segmentazione anatomica (ITK-SNAP) e simulazioni ad elementi finiti (COMSOL Multiphysics).</p>
                             </div>
                         </div>
                     </div>
@@ -181,300 +243,786 @@
             </div>
         </section>
 
-        <section id="projects" class="py-20 px-4">
-            <div class="container mx-auto max-w-6xl text-center fade-in-up">
-                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-slate-100">Featured Projects</h2>
-                <div class="h-1 w-20 bg-teal-500 mx-auto mb-12 rounded-full"></div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group flex flex-col">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://placehold.co/600x400/0f766e/ffffff?text=FEA+Analysis" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500 project-image cursor-pointer"
-                                 alt="FEA Analysis">
-                            <div class="absolute top-2 right-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">COMSOL</div>
-                        </div>
-                        <div class="p-6 text-left flex-grow flex flex-col">
-                            <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-slate-100">Lumbar Vertebra FEA</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">A comparative Finite Element Analysis simulating osteoporotic conditions to assess fracture risk.</p>
-                            <button class="text-teal-600 font-semibold hover:underline project-details-trigger text-sm"
-                                data-title="Finite Element Analysis of a Lumbar Vertebra"
-                                data-image="https://placehold.co/600x400/0f766e/ffffff?text=FEA+Analysis"
-                                data-tags="COMSOL, ITK-Snap, Biomechanics"
-                                data-problem="Assessing fracture risks in osteoporotic patients without invasive procedures is difficult."
-                                data-solution="Created a 3D model from CT scans using ITK-Snap and simulated mechanical stress loads in COMSOL."
-                                data-outcome="Validated a non-invasive method for predicting high-stress concentration areas."
-                            >Read Case Study</button>
-                        </div>
-                    </div>
+        <!-- EXPERIENCE SECTION -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Percorso Professionale</span>
+                    <h2 class="section-title">Esperienze di Ricerca</h2>
+                    <div class="section-divider"></div>
+                </div>
 
-                    <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group flex flex-col">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://placehold.co/600x400/0f766e/ffffff?text=Diabetes+ML" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500 project-image cursor-pointer"
-                                 alt="Diabetes ML">
-                            <div class="absolute top-2 right-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Python</div>
-                        </div>
-                        <div class="p-6 text-left flex-grow flex flex-col">
-                            <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-slate-100">Diabetes Classifier</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">Machine Learning pipeline using SVM to predict diabetes onset with high accuracy.</p>
-                            <div class="flex justify-between items-center mt-auto">
-                                <button class="text-teal-600 font-semibold hover:underline project-details-trigger text-sm"
-                                    data-title="ML Classifier for Diabetes"
-                                    data-image="https://placehold.co/600x400/0f766e/ffffff?text=Diabetes+ML"
-                                    data-tags="Python, Scikit-Learn, Pandas"
-                                    data-problem="Early detection of diabetes based on diagnostic metrics often requires complex analysis."
-                                    data-solution="Developed an SVM pipeline with GridSearchCV for hyperparameter tuning."
-                                    data-outcome="Achieved >85% accuracy on the test dataset."
-                                >Read Case Study</button>
-                                <a href="https://github.com/WPozz" target="_blank" class="text-slate-400 hover:text-slate-600"><i class="fa-brands fa-github"></i></a>
+                <div class="timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge current">Feb. 2026 – Presente</div>
+                            <h3 class="timeline-role">Deep Learning Researcher</h3>
+                            <h4 class="timeline-company"><i class="fa-solid fa-building-columns"></i> Padova Neuroscience Center (PNC) / UniPD</h4>
+                            <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Padova, Veneto, Italia (Ibrido)</p>
+                            <div class="timeline-project-name">
+                                <strong>Progetto EU HEREDITARY:</strong> <em>Anatomical-Aware Self-Supervised Learning for Clinical Phenotype Clustering</em>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Progettazione e ingegnerizzazione di una pipeline end-to-end di <strong>Self-Supervised Learning (SSL)</strong> in PyTorch, integrando i paradigmi <strong>C-JEPA</strong> e <strong>VICReg intra-soggetto</strong> per l'estrazione di fenotipi latenti da neuroimaging 3D non etichettato.</li>
+                                <li>Sviluppo di un'architettura <strong>multi-modale CNN-Transformer</strong> personalizzata con <em>TokenLearner</em> e attenzione spaziale per comprimere feature map multi-scala in embedding anatomicamente localizzati.</li>
+                                <li>Elaborazione e campionamento su larga scala del dataset eterogeneo <strong>FOMO-300K (318.000+ scansioni MRI)</strong>, con training loop ottimizzati su cluster Linux multi-GPU tramite <strong>SLURM</strong>.</li>
+                                <li>Applicazione di tecniche avanzate di anonimizzazione biometrica (<strong>automated defacing via SynthSeg+</strong>) per garantire la piena conformità alla privacy sui dati clinici sensibili.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>PyTorch</span>
+                                <span>SSL (C-JEPA, VICReg)</span>
+                                <span>CNN-Transformer</span>
+                                <span>SLURM / HPC</span>
+                                <span>SynthSeg+</span>
+                                <span>MRI 3D</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group flex flex-col">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://placehold.co/600x400/0f766e/ffffff?text=Tumor+Segmentation" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500 project-image cursor-pointer"
-                                 alt="Tumor Segmentation">
-                            <div class="absolute top-2 right-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Deep Learning</div>
-                        </div>
-                        <div class="p-6 text-left flex-grow flex flex-col">
-                            <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-slate-100">Tumor Segmentation</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">U-Net based tool for automated tumor volume calculation from MRI scans.</p>
-                            <button class="text-teal-600 font-semibold hover:underline project-details-trigger text-sm"
-                                data-title="Automated Tumor Segmentation"
-                                data-image="https://placehold.co/600x400/0f766e/ffffff?text=Tumor+Segmentation"
-                                data-tags="TensorFlow, OpenCV, Python"
-                                data-problem="Manual segmentation is slow and prone to inter-observer variability."
-                                data-solution="Implemented a U-Net architecture to automate mask generation."
-                                data-outcome="High Dice Similarity Coefficient; drastically reduced analysis time."
-                            >Read Case Study</button>
+                    <!-- Experience 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge">Dic. 2023 – Feb. 2024</div>
+                            <h3 class="timeline-role">Student Intern – Biomeccanica Computazionale</h3>
+                            <h4 class="timeline-company"><i class="fa-solid fa-university"></i> Università degli Studi "Gabriele d'Annunzio"</h4>
+                            <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Pescara, Abruzzo, Italia (In presenza)</p>
+                            <ul class="timeline-bullets">
+                                <li>Segmentazione 3D di scansioni diagnostiche TC per l'estrazione di regioni di interesse anatomiche (ROI vertebrali) tramite <strong>ITK-SNAP</strong>.</li>
+                                <li>Conduzione di analisi agli elementi finiti (<strong>FEA</strong>) tramite <strong>COMSOL Multiphysics</strong> per la valutazione biomeccanica strutturale in condizioni sane e patologiche.</li>
+                                <li>Documentazione e standardizzazione dei protocolli e workflow tecnici di modellazione.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>COMSOL Multiphysics</span>
+                                <span>ITK-SNAP</span>
+                                <span>FEA</span>
+                                <span>TC 3D</span>
+                                <span>Biomeccanica</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 px-4">
-            <div class="container mx-auto max-w-xl text-center fade-in-up">
-                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-slate-100">Get In Touch</h2>
-                <div class="h-1 w-20 bg-teal-500 mx-auto mb-8 rounded-full"></div>
-                <p class="text-slate-600 dark:text-slate-400 mb-8">
-                    I'm currently open to discussing new projects and opportunities.
-                </p>
-                <div class="flex justify-center gap-6 mb-8">
-                    <a href="mailto:william.pozzolini@gmail.com" class="flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-teal-700 transition shadow-lg">
-                        <i class="fa-regular fa-paper-plane"></i> Email Me
-                    </a>
+        <!-- PROJECTS SECTION -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Portfolio Tecnico</span>
+                    <h2 class="section-title">Progetti Accademici & Applicati</h2>
+                    <div class="section-divider"></div>
                 </div>
-                <div class="flex justify-center gap-8 text-3xl text-slate-400">
-                    <a href="#" class="hover:text-teal-600 transition hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/WPozz" target="_blank" class="hover:text-teal-600 transition hover:scale-110"><i class="fa-brands fa-github"></i></a>
+
+                <!-- Filter Buttons -->
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">Tutti i Progetti</button>
+                    <button class="filter-btn" data-filter="dl">Deep Learning & AI</button>
+                    <button class="filter-btn" data-filter="bci">Neuro & BCI</button>
+                    <button class="filter-btn" data-filter="health">Health Tech & Mobile</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+
+                    <!-- Project 1: Thesis / EU HEREDITARY -->
+                    <div class="project-card" data-category="dl">
+                        <div class="project-card-banner">
+                            <span class="project-type"><i class="fa-solid fa-microscope"></i> Master Thesis / EU Project</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Anatomical-Aware SSL for Phenotype Clustering</h3>
+                            <p class="project-desc">
+                                Pipeline SSL in PyTorch (C-JEPA & VICReg) per l'estrazione non supervisionata di fenotipi clinici da neuroimaging 3D (FOMO-300K).
+                            </p>
+                            <div class="project-highlights">
+                                <span><i class="fa-solid fa-check-circle"></i> TokenLearner & Spatial Attention</span>
+                                <span><i class="fa-solid fa-check-circle"></i> Multi-GPU SLURM Acceleration</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span>PyTorch</span>
+                                <span>C-JEPA</span>
+                                <span>VICReg</span>
+                                <span>Transformers</span>
+                                <span>HPC</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-modal-btn" data-modal="modal-hereditary">
+                                <i class="fa-solid fa-circle-info"></i> Dettagli
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Clinical NLP -->
+                    <div class="project-card" data-category="dl">
+                        <div class="project-card-banner">
+                            <span class="project-type"><i class="fa-solid fa-brain"></i> Medical NLP & PyTorch</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Clinical NLP – Medical Transcription Classification</h3>
+                            <p class="project-desc">
+                                Pipeline NLP basata su Transformer (Bio-ClinicalBERT) per la classificazione automatica di trascrizioni mediche in 13+ specialità cliniche.
+                            </p>
+                            <div class="project-highlights">
+                                <span><i class="fa-solid fa-chart-line"></i> 91% Top-3 Accuracy</span>
+                                <span><i class="fa-solid fa-bolt"></i> Custom Focal Loss & AMP CUDA</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span>PyTorch</span>
+                                <span>Bio-ClinicalBERT</span>
+                                <span>Focal Loss</span>
+                                <span>CUDA AMP</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-modal-btn" data-modal="modal-nlp">
+                                <i class="fa-solid fa-circle-info"></i> Dettagli
+                            </button>
+                            <a href="https://github.com/WPozz" target="_blank" class="btn btn-sm btn-ghost">
+                                <i class="fa-brands fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Kairos App -->
+                    <div class="project-card" data-category="health">
+                        <div class="project-card-banner">
+                            <span class="project-type"><i class="fa-solid fa-mobile-screen"></i> Mobile App & Wearable</span>
+                            <span class="project-year">2025 - 2026</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Kairos – Stress & Sedentary Behavior Monitor</h3>
+                            <p class="project-desc">
+                                App mobile Flutter con integrazione wearable (Fitbit) per il monitoraggio dello stress e della sedentarietà sul luogo di lavoro.
+                            </p>
+                            <div class="project-highlights">
+                                <span><i class="fa-solid fa-users"></i> Studio su 212 utenti (12 regioni IT)</span>
+                                <span><i class="fa-brands fa-google-play"></i> In rilascio su Google Play</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span>Flutter</span>
+                                <span>Dart</span>
+                                <span>Fitbit REST API</span>
+                                <span>State Management</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-modal-btn" data-modal="modal-kairos">
+                                <i class="fa-solid fa-circle-info"></i> Dettagli
+                            </button>
+                            <a href="https://github.com/WPozz" target="_blank" class="btn btn-sm btn-ghost">
+                                <i class="fa-brands fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: EEG / ROS Motor Imagery -->
+                    <div class="project-card" data-category="bci">
+                        <div class="project-card-banner">
+                            <span class="project-type"><i class="fa-solid fa-bolt"></i> Neuroengineering & BCI</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Real-Time EEG/BCI Motor Imagery in ROS</h3>
+                            <p class="project-desc">
+                                Classificatore basato su threshold per discriminare task di motor imagery (mani/piedi) in tempo reale estraendo bandpower EEG in ambiente ROS.
+                            </p>
+                            <div class="project-highlights">
+                                <span><i class="fa-solid fa-wave-square"></i> Real-time bandpower stream</span>
+                                <span><i class="fa-solid fa-robot"></i> Integrazione nodo ROS</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span>ROS</span>
+                                <span>EEG Bandpower</span>
+                                <span>Signal Processing</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-modal-btn" data-modal="modal-bci">
+                                <i class="fa-solid fa-circle-info"></i> Dettagli
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: SVM Diabetes Prediction -->
+                    <div class="project-card" data-category="dl">
+                        <div class="project-card-banner">
+                            <span class="project-type"><i class="fa-solid fa-chart-pie"></i> Machine Learning</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Diabetes Prediction via Support Vector Machines</h3>
+                            <p class="project-desc">
+                                Pipeline end-to-end scikit-learn con benchmark di kernel SVM (Lineare, RBF, Polinomiale), tuning GridSearchCV e gestione del class imbalance.
+                            </p>
+                            <div class="project-highlights">
+                                <span><i class="fa-solid fa-scale-balanced"></i> Balanced Accuracy & Baselines</span>
+                                <span><i class="fa-solid fa-magnifying-glass"></i> Model Interpretability</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span>scikit-learn</span>
+                                <span>Python</span>
+                                <span>SVM Kernels</span>
+                                <span>GridSearchCV</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-modal-btn" data-modal="modal-svm">
+                                <i class="fa-solid fa-circle-info"></i> Dettagli
+                            </button>
+                            <a href="https://github.com/WPozz" target="_blank" class="btn btn-sm btn-ghost">
+                                <i class="fa-brands fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: FEA Lumbar Vertebra -->
+                    <div class="project-card" data-category="bci">
+                        <div class="project-card-banner">
+                            <span class="project-type"><i class="fa-solid fa-bone"></i> Bachelor Thesis / FEA</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">FEA Modeling of Healthy vs. Pathological Vertebra</h3>
+                            <p class="project-desc">
+                                Modellazione e analisi biomeccanica agli elementi finiti di una vertebra lombare a partire da immagini diagnostiche TC.
+                            </p>
+                            <div class="project-highlights">
+                                <span><i class="fa-solid fa-cube"></i> Segmentazione 3D ITK-SNAP</span>
+                                <span><i class="fa-solid fa-chart-area"></i> Simulazioni di stress COMSOL</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span>COMSOL</span>
+                                <span>ITK-SNAP</span>
+                                <span>FEA Biomechanics</span>
+                                <span>CT Scans</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-modal-btn" data-modal="modal-fea">
+                                <i class="fa-solid fa-circle-info"></i> Dettagli
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
-        
-        <footer class="bg-slate-200 dark:bg-slate-900 py-6 text-center text-sm text-slate-500">
-            <p>&copy; 2024 William Pozzolini. Built with Tailwind CSS.</p>
-        </footer>
+
+        <!-- EDUCATION SECTION -->
+        <section class="education section" id="education">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Background Accademico</span>
+                    <h2 class="section-title">Istruzione & Formazione</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="edu-grid">
+                    <!-- Master's Degree -->
+                    <div class="edu-card featured-edu">
+                        <div class="edu-header">
+                            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="edu-title-group">
+                                <h3>Laurea Magistrale in Bioingegneria</h3>
+                                <h4>Università degli Studi di Padova</h4>
+                            </div>
+                            <span class="edu-badge current-badge">Set. 2024 – Set. 2026</span>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-stats-row">
+                                <div class="edu-stat"><strong>Media Attuale:</strong> 27.4 / 30</div>
+                                <div class="edu-stat"><strong>Relatore:</strong> Prof. Manfredo Atzori</div>
+                                <div class="edu-stat"><strong>Sede:</strong> Padova, Italia</div>
+                            </div>
+                            <p class="edu-thesis">
+                                <strong>Tesi di Ricerca:</strong> <em>Anatomical-Aware Self-Supervised Learning for Clinical Phenotype Clustering (Progetto Europeo HEREDITARY)</em>
+                            </p>
+                            <div class="edu-courses">
+                                <strong>Corsi Chiave:</strong>
+                                <div class="course-tags">
+                                    <span>Deep Learning applied to Neuroscience</span>
+                                    <span>Machine Learning</span>
+                                    <span>Biosensors</span>
+                                    <span>Advanced Bio-signal Analysis</span>
+                                    <span>Neuro-robotics</span>
+                                    <span>Imaging for Neuroscience</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bachelor's Degree -->
+                    <div class="edu-card">
+                        <div class="edu-header">
+                            <div class="edu-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="edu-title-group">
+                                <h3>Laurea Triennale in Ingegneria Biomedica</h3>
+                                <h4>Università degli Studi "Gabriele d'Annunzio"</h4>
+                            </div>
+                            <span class="edu-badge">Ott. 2021 – Lug. 2024</span>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-stats-row">
+                                <div class="edu-stat"><strong>Votazione Finale:</strong> 101 / 110</div>
+                                <div class="edu-stat"><strong>Relatrice:</strong> Prof.ssa Cristina Falcinelli</div>
+                                <div class="edu-stat"><strong>Sede:</strong> Pescara, Italia</div>
+                            </div>
+                            <p class="edu-thesis">
+                                <strong>Tesi Triennale:</strong> <em>Modellazione e analisi agli elementi finiti (FEA) di una vertebra lombare: confronto tra caso sano e patologico.</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- European School -->
+                    <div class="edu-card international-card">
+                        <div class="edu-header">
+                            <div class="edu-icon"><i class="fa-solid fa-globe"></i></div>
+                            <div class="edu-title-group">
+                                <h3>Scuola Europea di Bruxelles I (EEB1)</h3>
+                                <h4>Uccle, Bruxelles, Belgio</h4>
+                            </div>
+                            <span class="edu-badge">2015 – 2016</span>
+                        </div>
+                        <div class="edu-body">
+                            <p>
+                                Anno accademico internazionale immerso in un contesto multilingue e multiculturale, contribuendo alla padronanza avanzata di <strong>Francese</strong> e <strong>Tedesco</strong>, oltre all'Inglese fluido e all'Italiano madrelingua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX SECTION -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Competenze Tecniche</span>
+                    <h2 class="section-title">Tech Stack & Toolset</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- AI & Programming -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fa-brands fa-python skill-cat-icon"></i>
+                            <h3>Programming & Deep Learning</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>Python (PyTorch, TensorFlow, NumPy)</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Self-Supervised Learning (C-JEPA, VICReg)</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Transformers & Medical NLP (HuggingFace)</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>R (Caret, GBM) & LaTeX</span>
+                                    <span class="skill-level">Competente</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Infrastructure & Tools -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fa-solid fa-server skill-cat-icon"></i>
+                            <h3>HPC, Software & Framework</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>High-Performance Computing (SLURM, Multi-GPU)</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Git & Version Control</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Robot Operating System (ROS)</span>
+                                    <span class="skill-level">Competente</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Flutter & Mobile Dev (Dart, REST API)</span>
+                                    <span class="skill-level">Competente</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 82%;"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Biomedical Domain Tools -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fa-solid fa-heart-pulse skill-cat-icon"></i>
+                            <h3>Bioingegneria & Medical Imaging</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>3D Medical Imaging & Defacing (SynthSeg+)</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>MATLAB & Advanced Biosignal Processing</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>ITK-SNAP (Medical Image Segmentation)</span>
+                                    <span class="skill-level">Avanzato</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>COMSOL Multiphysics (FEA & Biomechanics)</span>
+                                    <span class="skill-level">Competente</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 82%;"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Parliamo di Ricerca & Collaborazioni</span>
+                    <h2 class="section-title">Mettiti in Contatto</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info-card">
+                        <h3>Contatti Diretti</h3>
+                        <p>Sono sempre aperto a discussioni su progetti di ricerca in AI & Neuroscienze, opportunità professionali e collaborazioni scientifiche.</p>
+
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <span class="c-label">Email</span>
+                                    <a href="mailto:williampoz15@gmail.com" class="c-value">williampoz15@gmail.com</a>
+                                </div>
+                                <button class="copy-btn" onclick="copyEmail()" title="Copia Email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <span class="c-label">Telefono</span>
+                                    <a href="tel:+393881661711" class="c-value">+39 388 166 1711</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <span class="c-label">Sede</span>
+                                    <span class="c-value">Padova / Pescara, Italia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-pills">
+                            <a href="https://linkedin.com/in/william-pozzolini" target="_blank" class="social-pill">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/WPozz" target="_blank" class="social-pill">
+                                <i class="fa-brands fa-github"></i> GitHub (@WPozz)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Quick Message Form -->
+                    <div class="contact-form-card">
+                        <h3>Invia un Messaggio</h3>
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Nome / Organizzazione</label>
+                                <input type="text" id="name" required placeholder="Es. Mario Rossi (Univ. / Azienda)">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Indirizzo Email</label>
+                                <input type="email" id="email" required placeholder="nome@dominio.it">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Oggetto</label>
+                                <input type="text" id="subject" required placeholder="Opportunità di ricerca / Collaborazione">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Messaggio</label>
+                                <textarea id="message" rows="4" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fa-solid fa-paper-plane"></i> Invia tramite Client Email
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <div id="project-modal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="modal-backdrop"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-4">
-            <div class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
-                <div class="flex justify-between items-center p-4 border-b border-slate-100 dark:border-slate-700">
-                    <h3 id="modal-title" class="text-xl font-bold text-slate-800 dark:text-white"></h3>
-                    <button id="modal-close" class="text-slate-400 hover:text-red-500 text-2xl">&times;</button>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p>&copy; 2026 <strong>William Pozzolini</strong>. Tutti i diritti riservati.</p>
+                <p class="gdpr-note"><i class="fa-solid fa-shield-halved"></i> Trattamento dati autorizzato ai sensi del Regolamento UE 2016/679 (GDPR).</p>
+            </div>
+            <div class="footer-right">
+                <a href="#hero" class="back-to-top" title="Torna all'inizio">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE PROJECT MODALS -->
+    
+    <!-- Modal 1: HEREDITARY / Thesis -->
+    <div class="modal" id="modal-hereditary">
+        <div class="modal-overlay" onclick="closeModal('modal-hereditary')"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-microscope"></i> EU HEREDITARY: Anatomical-Aware SSL</h3>
+                <button class="modal-close" onclick="closeModal('modal-hereditary')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badge-row">
+                    <span class="m-badge">PyTorch</span>
+                    <span class="m-badge">C-JEPA</span>
+                    <span class="m-badge">VICReg</span>
+                    <span class="m-badge">TokenLearner</span>
+                    <span class="m-badge">FOMO-300K</span>
+                    <span class="m-badge">SLURM</span>
                 </div>
-                <div class="p-6 overflow-y-auto max-h-[70vh]">
-                    <img id="modal-image" src="" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <div id="modal-tags" class="flex flex-wrap gap-2 mb-6"></div>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-bold text-teal-600 dark:text-teal-400 text-sm uppercase">The Challenge</h4>
-                            <p id="modal-problem" class="text-slate-600 dark:text-slate-300 text-sm"></p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-teal-600 dark:text-teal-400 text-sm uppercase">The Solution</h4>
-                            <p id="modal-solution" class="text-slate-600 dark:text-slate-300 text-sm"></p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-teal-600 dark:text-teal-400 text-sm uppercase">The Outcome</h4>
-                            <p id="modal-outcome" class="text-slate-600 dark:text-slate-300 text-sm"></p>
-                        </div>
-                    </div>
-                </div>
+                <h4>Obiettivo Scientifico</h4>
+                <p>Estrarre rappresentazioni fenotipiche latenti e interpretabili da risonanze magnetiche 3D senza l'uso di etichette diagnostiche esplicite (unsupervised), abilitando il clustering di sottogruppi clinici nel contesto del progetto europeo HEREDITARY.</p>
+                
+                <h4>Architettura e Metodologia</h4>
+                <ul>
+                    <li><strong>Paradigma Ibrido SSL:</strong> Combinazione tra C-JEPA (Contextual Joint-Embedding Predictive Architecture) e regolarizzazione VICReg intra-soggetto per prevenire il collasso delle rappresentazioni.</li>
+                    <li><strong>CNN-Transformer con TokenLearner:</strong> Estrazione di feature volumetriche multi-scala tramite backbone CNN, compresse da un modulo TokenLearner in token spazialmente localizzati processati da blocchi Transformer.</li>
+                    <li><strong>HPC & Big Data:</strong> Elaborazione distribuita del dataset FOMO-300K (oltre 318.000 volumi MRI) con ottimizzazioni mixed precision (AMP) su cluster multi-GPU con scheduler SLURM.</li>
+                    <li><strong>Privacy & Anonymization:</strong> Pipeline automatica di defacing tramite SynthSeg+ per conformità normativa sanitaria.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-hereditary')">Chiudi</button>
             </div>
         </div>
     </div>
 
-    <a href="#hero" id="back-to-top" class="fixed bottom-8 right-8 bg-teal-600 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg translate-y-20 opacity-0 transition-all duration-300 hover:bg-teal-700">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Modal 2: Clinical NLP -->
+    <div class="modal" id="modal-nlp">
+        <div class="modal-overlay" onclick="closeModal('modal-nlp')"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-brain"></i> Clinical NLP – Medical Transcription Classification</h3>
+                <button class="modal-close" onclick="closeModal('modal-nlp')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badge-row">
+                    <span class="m-badge">Transformers</span>
+                    <span class="m-badge">Bio-ClinicalBERT</span>
+                    <span class="m-badge">PyTorch</span>
+                    <span class="m-badge">Focal Loss</span>
+                    <span class="m-badge">CUDA AMP</span>
+                </div>
+                <h4>Panoramica del Progetto</h4>
+                <p>Classificazione multi-classe automatizzata di referti e trascrizioni cliniche complesse in 13+ specialità mediche per ottimizzare il triage informativo in contesti ospedalieri.</p>
+                
+                <h4>Risultati e Dettagli Tecnici</h4>
+                <ul>
+                    <li>Fine-tuning del modello pre-addestrato sul dominio biomedico <strong>Bio-ClinicalBERT</strong>.</li>
+                    <li>Introduzione di una <strong>Focal Loss</strong> pesata personalizzata per superare il forte sbilanciamento delle classi tra specialità rare e frequenti.</li>
+                    <li>Raggiungimento di una <strong>Top-3 Accuracy del 91%</strong> validata con curve di Precision-Recall e matrici di confusione standardizzate.</li>
+                    <li>Addestramento accelerato mediante PyTorch Automatic Mixed Precision (AMP).</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="https://github.com/WPozz" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> Repository GitHub</a>
+                <button class="btn btn-secondary" onclick="closeModal('modal-nlp')">Chiudi</button>
+            </div>
+        </div>
+    </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("✅ Portfolio Script Initialized");
+    <!-- Modal 3: Kairos -->
+    <div class="modal" id="modal-kairos">
+        <div class="modal-overlay" onclick="closeModal('modal-kairos')"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-mobile-screen"></i> Kairos – Stress & Sedentary Behavior App</h3>
+                <button class="modal-close" onclick="closeModal('modal-kairos')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badge-row">
+                    <span class="m-badge">Flutter</span>
+                    <span class="m-badge">Dart</span>
+                    <span class="m-badge">Fitbit API</span>
+                    <span class="m-badge">REST API</span>
+                    <span class="m-badge">Provider</span>
+                </div>
+                <h4>Contesto e Sviluppo</h4>
+                <p>Applicazione mobile ideata e sviluppata per il monitoraggio continuativo del benessere lavorativo, rilevando stati di sedentarietà prolungata e stress attraverso sensori wearable.</p>
+                
+                <h4>Funzionalità Chiave</h4>
+                <ul>
+                    <li>Integrazione real-time con le API Fitbit per il recupero di parametri biometrici (HRV, passi, attività).</li>
+                    <li>Data layer robusto con gestione offline, caching locale e sincronizzazione con server universitario sicuro.</li>
+                    <li>Design validato da un sondaggio su 212 lavoratori distribuiti in 12 regioni italiane su privacy e user experience.</li>
+                    <li>Interfaccia bilingue (IT/EN) con rilascio programmato su Google Play Store.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="https://github.com/WPozz" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> Repository GitHub</a>
+                <button class="btn btn-secondary" onclick="closeModal('modal-kairos')">Chiudi</button>
+            </div>
+        </div>
+    </div>
 
-    // --- 1. ROBUST TIMELINE LOGIC ---
-    const triggers = document.querySelectorAll('.timeline-trigger');
-    
-    console.log(`🔍 Found ${triggers.length} timeline triggers.`);
+    <!-- Modal 4: BCI -->
+    <div class="modal" id="modal-bci">
+        <div class="modal-overlay" onclick="closeModal('modal-bci')"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-bolt"></i> Real-Time EEG/BCI Motor Imagery in ROS</h3>
+                <button class="modal-close" onclick="closeModal('modal-bci')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badge-row">
+                    <span class="m-badge">ROS</span>
+                    <span class="m-badge">EEG Bandpower</span>
+                    <span class="m-badge">Digital Filtering</span>
+                    <span class="m-badge">Python</span>
+                </div>
+                <h4>Architettura di Controllo</h4>
+                <p>Implementazione di una pipeline Robot Operating System (ROS) per la decodifica in streaming di intenzioni motorie (mano destra/sinistra e piedi) da tracciati elettroencefalografici (EEG).</p>
+                
+                <h4>Workflow di Elaborazione</h4>
+                <ul>
+                    <li>Configurazione di filtri passa-banda specifici per isolare i ritmi sensorimotori Mu (8-12 Hz) e Beta (13-30 Hz).</li>
+                    <li>Calcolo online della potenza di banda (bandpower) con stima in tempo reale.</li>
+                    <li>Acquisizione sperimentale del dataset EEG/BCI per taratura e calibrazione dei threshold decisionali.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-bci')">Chiudi</button>
+            </div>
+        </div>
+    </div>
 
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-            console.log("🖱️ Timeline Clicked!");
-            
-            // Safer selector: Go up to the parent, then find the details inside it
-            // This works even if you change the HTML structure slightly
-            const parent = trigger.parentElement;
-            const details = parent.querySelector('.timeline-details');
-            const icon = trigger.querySelector('i');
+    <!-- Modal 5: SVM -->
+    <div class="modal" id="modal-svm">
+        <div class="modal-overlay" onclick="closeModal('modal-svm')"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-chart-pie"></i> Diabetes Prediction with SVM</h3>
+                <button class="modal-close" onclick="closeModal('modal-svm')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badge-row">
+                    <span class="m-badge">scikit-learn</span>
+                    <span class="m-badge">GridSearchCV</span>
+                    <span class="m-badge">Balanced Accuracy</span>
+                    <span class="m-badge">SVM Kernels</span>
+                </div>
+                <h4>Dettagli Metodologici</h4>
+                <p>Pipeline rigorosa per la classificazione del rischio diabetico, focalizzata sull'ottimizzazione degli iperparametri e sull'interpretabilità clinica dei confini di decisione.</p>
+                <ul>
+                    <li>Confronto approfondito tra kernel Lineare, RBF (Radial Basis Function) e Polinomiale.</li>
+                    <li>Ottimizzazione della cross-validation via GridSearchCV guidata dalla metrica <em>Balanced Accuracy</em>.</li>
+                    <li>Analisi della robustezza rispetto al modello di baseline a classe maggioritaria.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="https://github.com/WPozz" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> Repository GitHub</a>
+                <button class="btn btn-secondary" onclick="closeModal('modal-svm')">Chiudi</button>
+            </div>
+        </div>
+    </div>
 
-            if (details) {
-                // Toggle the 'hidden' class
-                details.classList.toggle('hidden');
-                console.log("   -> Toggled visibility");
-            } else {
-                console.error("   ❌ Error: Could not find .timeline-details sibling!");
-            }
+    <!-- Modal 6: FEA -->
+    <div class="modal" id="modal-fea">
+        <div class="modal-overlay" onclick="closeModal('modal-fea')"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-bone"></i> FEA Modeling of Lumbar Vertebra</h3>
+                <button class="modal-close" onclick="closeModal('modal-fea')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badge-row">
+                    <span class="m-badge">COMSOL Multiphysics</span>
+                    <span class="m-badge">ITK-SNAP</span>
+                    <span class="m-badge">FEA</span>
+                    <span class="m-badge">CT Segmentation</span>
+                </div>
+                <h4>Tesi di Laurea Triennale</h4>
+                <p>Studio comparativo tra vertebre lombari sane e osteoporotiche/patologiche mediante modellazione tridimensionale e analisi agli elementi finiti.</p>
+                <ul>
+                    <li>Segmentazione semi-automatica delle densità ossee corticali e trabecolari da scansioni TC in ITK-SNAP.</li>
+                    <li>Generazione di mesh 3D e simulazione delle distribuzioni delle sollecitazioni di Von Mises sotto diversi carichi fisiologici di compressione e flessione in COMSOL.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-fea')">Chiudi</button>
+            </div>
+        </div>
+    </div>
 
-            if (icon) {
-                icon.classList.toggle('rotate-180');
-            }
-        });
-    });
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">Email copiata negli appunti!</div>
 
-    // --- 2. TYPEWRITER EFFECT ---
-    const typeText = document.getElementById('typewriter');
-    if(typeText) {
-        const phrases = ["Biomedical Engineer", "Signal Processing Specialist", "Machine Learning Enthusiast"];
-        let phraseIdx = 0; 
-        let charIdx = 0; 
-        let isDeleting = false;
-        
-        function type() {
-            const current = phrases[phraseIdx];
-            if(isDeleting) {
-                typeText.textContent = current.substring(0, charIdx - 1);
-                charIdx--;
-            } else {
-                typeText.textContent = current.substring(0, charIdx + 1);
-                charIdx++;
-            }
-            
-            let speed = isDeleting ? 50 : 100;
-            
-            if(!isDeleting && charIdx === current.length) {
-                isDeleting = true;
-                speed = 2000;
-            } else if(isDeleting && charIdx === 0) {
-                isDeleting = false;
-                phraseIdx = (phraseIdx + 1) % phrases.length;
-                speed = 500;
-            }
-            setTimeout(type, speed);
-        }
-        setTimeout(type, 1000);
-    }
-
-    // --- 3. THEME TOGGLE ---
-    const toggleBtn = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    
-    // Set initial state
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        html.classList.add('dark');
-    }
-    
-    if(toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-        });
-    }
-
-    // --- 4. PROJECT MODAL ---
-    const modal = document.getElementById('project-modal');
-    if(modal) {
-        const modalContent = document.getElementById('modal-content');
-        const modalBackdrop = document.getElementById('modal-backdrop');
-        const closeBtn = document.getElementById('modal-close');
-
-        window.openModal = function(data) {
-            document.getElementById('modal-title').innerText = data.title;
-            document.getElementById('modal-image').src = data.image;
-            document.getElementById('modal-problem').innerText = data.problem;
-            document.getElementById('modal-solution').innerText = data.solution;
-            document.getElementById('modal-outcome').innerText = data.outcome;
-            
-            const tagsContainer = document.getElementById('modal-tags');
-            tagsContainer.innerHTML = '';
-            if(data.tags) {
-                data.tags.split(',').forEach(tag => {
-                    const span = document.createElement('span');
-                    span.className = 'bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded dark:bg-teal-900 dark:text-teal-200';
-                    span.innerText = tag.trim();
-                    tagsContainer.appendChild(span);
-                });
-            }
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modalContent.classList.remove('scale-95', 'opacity-0');
-                modalContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            modalContent.classList.remove('scale-100', 'opacity-100');
-            modalContent.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        document.querySelectorAll('.project-details-trigger').forEach(btn => {
-            btn.addEventListener('click', (e) => window.openModal(e.target.dataset));
-        });
-
-        if(closeBtn) closeBtn.addEventListener('click', closeModal);
-        if(modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-    }
-
-    // --- 5. SCROLL OBSERVER (Required for content to be visible) ---
-    const fadeElems = document.querySelectorAll('.fade-in-up');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.1 });
-    fadeElems.forEach(el => observer.observe(el));
-
-    // --- 6. HEADER & BACK TO TOP ---
-    const header = document.getElementById('header');
-    const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        if(window.scrollY > 50) {
-            header.classList.add('shadow-md');
-        } else {
-            header.classList.remove('shadow-md');
-        }
-        
-        if(backToTop) {
-            if(window.scrollY > 300) {
-                backToTop.classList.remove('opacity-0', 'pointer-events-none'); // FIX: Removed translate-y logic for simpler visibility
-                backToTop.classList.remove('translate-y-20');
-            } else {
-                backToTop.classList.add('opacity-0', 'pointer-events-none');
-                backToTop.classList.add('translate-y-20');
-            }
-        }
-    });
-});
-</script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
-
